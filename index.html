@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reverse Game Report — Jax vs. White Sox · No Brand Baseball Analytics</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"><style>
+:root{
+ --bg:#06182f;--bg2:#0a2342;--card:#0d294a;--card2:#102f54;--card3:#0c264a;
+ --line:#1d3656;--line2:#142943;--navy:#092C5C;--sky:#8FBCE6;--gold:#F5D130;
+ --ink:#e9f0f8;--mut:#7f99b6;--mut2:#5c7596;--hi:#cfe3f7;
+ --good:#2bb673;--lean:#7fd1a3;--warn:#e8915a;--bad:#e0553f;
+ --b1:#0b2444;--b2:#091f3a;--b3:#14365f;--b4:#2a4d78;--bwitt:#574a1e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -120px,#10325c 0%,var(--bg) 60%) fixed,var(--bg);color:var(--ink);
+ font-family:'Archivo',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:50px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.mono{font-family:'JetBrains Mono',monospace}
+header{padding:28px 0 16px}
+.eyebrow{font-size:11px;letter-spacing:.34em;color:var(--sky);text-transform:uppercase;font-weight:700;font-family:'JetBrains Mono'}
+h1{font-family:'Archivo Black';font-size:31px;line-height:1.03;margin:9px 0 6px;letter-spacing:-.5px}
+h1 em{color:var(--sky);font-style:normal}
+.tagline{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.gtag{display:inline-flex;align-items:center;gap:6px;margin-top:9px;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(245,209,48,.08);border:1px solid var(--bwitt);border-radius:6px;padding:4px 9px;font-weight:700}
+.sub{color:var(--mut);font-size:13.5px;font-family:'JetBrains Mono';margin-top:8px}
+.sub b{color:var(--hi);font-weight:500}
+.r1{margin-top:16px;background:linear-gradient(135deg,#0c2a4d,#0a1f3a);border:1px solid var(--line);border-radius:14px;padding:15px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.r1 .badge{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.16em;color:#06182f;background:var(--sky);padding:4px 9px;border-radius:5px;font-weight:700;flex:none}
+.r1 .ln{font-family:'Archivo';font-size:13px;font-weight:600;color:var(--hi)}
+.tabs{position:sticky;top:0;z-index:20;display:flex;gap:6px;padding:12px 0 10px;margin-top:14px;background:linear-gradient(180deg,var(--bg) 70%,rgba(6,24,47,0));backdrop-filter:blur(4px)}
+.tab{flex:1;text-align:center;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;padding:10px 6px;border-radius:10px;border:1px solid var(--line);background:var(--b1);color:var(--mut);cursor:pointer;font-weight:700;transition:.15s}
+.tab.on{background:var(--sky);color:#06182f;border-color:var(--sky)}
+.pane{display:none}.pane.on{display:block;animation:f .2s}
+@keyframes f{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut2);font-family:'JetBrains Mono';font-weight:700;margin:22px 0 12px}
+.hero{background:linear-gradient(135deg,var(--b3),var(--card));border:1px solid var(--b4);border-radius:16px;padding:22px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(var(--gold),var(--sky))}
+.hero h2{font-family:'Archivo Black';font-size:22px;line-height:1.12;margin-bottom:10px}
+.hero h2 .g{color:var(--gold)}
+.hero p{font-size:14.5px;color:var(--hi);line-height:1.6;margin-bottom:9px}
+.hero p:last-of-type{margin-bottom:0}.hero p b{color:#fff}.hero p .g{color:var(--gold);font-weight:700}
+.park{margin-top:14px;background:linear-gradient(135deg,#241a0e,#0e2038);border:1px solid var(--bwitt);border-radius:13px;padding:14px 16px;display:flex;gap:13px;align-items:flex-start}
+.park .ic{font-size:19px;line-height:1}
+.park .t{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+.park p{font-size:13px;color:var(--hi);line-height:1.5}.park p b{color:#fff}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media(max-width:640px){.keys{grid-template-columns:1fr}}
+.key{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px}
+.key .n{font-family:'Archivo Black';font-size:13px;color:var(--sky);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.key .n span{display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--sky);color:#06182f;align-items:center;justify-content:center;font-size:12px;flex:none}
+.key p{font-size:13px;color:var(--hi);line-height:1.5}.key p b{color:#fff}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut2);text-align:left;padding:0 8px 9px;font-weight:700}
+.tbl td{padding:10px 8px;border-top:1px solid var(--line2)}
+.pill{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+.use{font-family:'JetBrains Mono';font-size:12px;color:var(--hi)}
+.engine{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:560px){.engine{grid-template-columns:1fr}}
+.eng{border:1px solid var(--line);border-radius:13px;padding:15px;background:var(--card)}
+.eng h4{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.eng.r h4{color:var(--sky)}.eng.l h4{color:var(--gold)}
+.eng p{font-size:13px;color:var(--hi);line-height:1.5}.eng p b{color:#fff}
+.glayer{margin-top:14px;background:linear-gradient(135deg,#0c2742,#0a1f38);border:1px solid var(--line);border-radius:14px;padding:17px}
+.glayer h4{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700}
+.glayer .v{font-size:12.5px;color:var(--hi);line-height:1.6;margin-bottom:5px;font-family:'JetBrains Mono'}
+.glayer .v .ok{color:var(--good);font-weight:700}.glayer .v .no{color:var(--bad);font-weight:700}
+.glayer .syn{margin-top:11px;padding-top:11px;border-top:1px solid var(--line2);font-size:13px;color:var(--hi);line-height:1.55;font-family:'Archivo'}
+.glayer .syn b{color:#fff}.glayer .syn .g{color:var(--gold);font-weight:700}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.hgrid{grid-template-columns:1fr}}
+.hcard{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 15px;border-left:3px solid var(--line)}
+.hcard .top{display:flex;align-items:center;gap:8px;margin-bottom:9px;flex-wrap:wrap}
+.hcard .slot{font-family:'JetBrains Mono';font-size:11px;color:var(--mut2)}
+.hcard .nm{font-family:'Archivo Black';font-size:15px;color:#fff}
+.bb{font-family:'JetBrains Mono';font-size:9.5px;color:#06182f;background:var(--sky);border-radius:4px;padding:1px 5px;font-weight:700}
+.bb.L{background:var(--gold)}.bb.S{background:var(--lean)}
+.threat{font-family:'JetBrains Mono';font-size:9px;font-weight:700;letter-spacing:.06em;padding:1px 6px;border-radius:4px;background:rgba(255,255,255,.05)}
+.gd{font-family:'JetBrains Mono';font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;letter-spacing:.03em}
+.gd.up{background:#3a1c12;color:#f0a06a}.gd.dn{background:#10331f;color:#4fce92}
+.tier{font-family:'JetBrains Mono';font-size:9.5px;font-weight:700;letter-spacing:.04em}
+.favrow{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+.favbar{flex:1;height:7px;background:var(--b2);border:1px solid var(--line2);border-radius:4px;overflow:hidden}
+.favbar i{display:block;height:100%;border-radius:4px}
+.woba{font-family:'JetBrains Mono';font-weight:700;color:#fff;font-size:13px}
+.meta2{display:flex;gap:14px;font-family:'JetBrains Mono';font-size:11.5px;color:var(--mut);margin-bottom:10px;flex-wrap:wrap}
+.meta2 b{color:var(--warn)}.meta2 span{color:var(--hi)}
+.attack{font-size:13px;color:var(--hi);font-weight:600;line-height:1.5;margin-bottom:9px;padding:9px 11px;background:var(--b2);border:1px solid var(--line2);border-left:3px solid var(--sky);border-radius:8px}
+.attack:before{content:"ATTACK";display:block;font-family:'JetBrains Mono';font-size:9px;letter-spacing:.16em;color:var(--sky);font-weight:700;margin-bottom:3px}
+.swingread{font-size:12px;color:var(--mut);line-height:1.45;font-style:italic;padding-top:8px;border-top:1px dashed var(--line2)}
+.witt{margin-top:14px;background:linear-gradient(135deg,#241a0e,#10243f);border:1px solid var(--bwitt);border-radius:14px;padding:17px}
+.witt h3{font-family:'Archivo Black';font-size:17px;color:var(--gold);margin-bottom:3px}
+.legend{margin-top:12px;color:var(--mut2);font-size:11px;font-family:'JetBrains Mono';line-height:1.6}
+.legend b{color:var(--mut)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:middle}
+.speak{margin-top:24px;background:linear-gradient(135deg,#0d294a,#0a1f3b);border:1px solid #22436f;border-radius:16px;padding:20px}
+.speak .tag{display:inline-block;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.2em;color:#06182f;background:var(--sky);padding:3px 9px;border-radius:5px;font-weight:700;margin-bottom:12px}
+.speak p{font-size:15px;line-height:1.62;color:var(--hi);margin-bottom:11px}.speak p:last-child{margin-bottom:0}
+.speak p b{color:#fff}.speak p .gold{color:var(--gold);font-weight:700}
+.seqgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.seqgrid{grid-template-columns:1fr}}
+.tun{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px;border-top:3px solid var(--sky)}
+.tun .tn{font-family:'Archivo Black';font-size:15px;color:#fff}
+.tun .tt{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin:2px 0 8px;font-weight:700}
+.tun p{font-size:12.5px;color:var(--hi);line-height:1.55}
+.cf td:first-child{font-family:'JetBrains Mono';font-size:11px;color:var(--mut);white-space:nowrap}
+.cf .rx{font-family:'JetBrains Mono';font-size:12px;color:var(--hi)}
+.cf .rx b{color:var(--gold)}
+.pa td{font-size:13px;color:var(--hi)}
+.pa td:first-child{font-weight:700;color:#fff}
+.pa .pr{font-family:'JetBrains Mono';font-size:12px;color:var(--sky);white-space:nowrap}
+.pa .pn{font-size:12px;color:var(--mut)}
+
+.vp{font-family:'JetBrains Mono';font-size:9px;font-weight:700;letter-spacing:.05em;padding:2px 7px;border-radius:4px}
+.vp.CLEAN{background:#10331f;color:#4fce92}.vp.SOFT{background:#1b2f4d;color:#8FBCE6}
+.vp.NOISE{background:#3a3413;color:#e8d06a}.vp.FIXABLE{background:#3a1c12;color:#f0a06a}
+.sumstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+@media(max-width:560px){.sumstrip{grid-template-columns:repeat(2,1fr)}}
+.sumc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center}
+.sumc .n{font-family:'Archivo Black';font-size:26px}
+.sumc .l{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.12em;color:var(--mut);margin-top:3px}
+.pat td{font-size:12px;color:var(--hi);padding:8px 6px;vertical-align:top}
+.pat .rv{font-family:'JetBrains Mono';white-space:nowrap}
+.pat .nt{color:var(--mut);font-size:11px;font-style:italic}
+.adgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+@media(max-width:640px){.adgrid{grid-template-columns:1fr}}
+.adc{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;border-left:3px solid var(--line)}
+.adc.pass{border-left-color:var(--good)}.adc.fail{border-left-color:var(--bad)}.adc.part{border-left-color:var(--gold)}
+.adc .st{font-family:'JetBrains Mono';font-size:9.5px;font-weight:700;letter-spacing:.1em}
+.adc.pass .st{color:var(--good)}.adc.fail .st{color:var(--bad)}.adc.part .st{color:var(--gold)}
+.adc h5{font-family:'Archivo Black';font-size:13.5px;color:#fff;margin:3px 0 6px}
+.adc p{font-size:12.5px;color:var(--hi);line-height:1.5}.adc p b{color:#fff}
+</style></head><body><div class="wrap">
+<header>
+ <div class="eyebrow">No Brand Baseball Analytics</div>
+ <h1>Reverse Game Report — <em>White Sox</em></h1>
+ <div class="tagline">Aug 2 · Tropicana Field · 5.0 IP · 1 ER · 8 K · 0 BB · 4 H</div>
+ <div class="gtag">⚙ Two-lens grading · run value × contact quality · plan adherence</div>
+ <div class="sumstrip">
+  <div class="sumc"><div class="n" style="color:var(--good)">14</div><div class="l">CLEAN</div></div>
+  <div class="sumc"><div class="n" style="color:#e8d06a">5</div><div class="l">NOISE</div></div>
+  <div class="sumc"><div class="n" style="color:var(--sky)">1</div><div class="l">SOFT</div></div>
+  <div class="sumc"><div class="n" style="color:var(--bad)">1</div><div class="l">FIXABLE</div></div>
+ </div>
+ <div class="r1" style="margin-top:12px"><span class="badge" style="background:var(--gold)">NET RUN VALUE</span>
+  <span class="ln">+0.14 across 21 PA — dead neutral on the ledger, and +1.10 of it rode on two errors behind him. The pitching was better than the line.</span></div>
+</header>
+
+<div class="kicker">The One That's On Him</div>
+<div class="hero">
+ <h2>One fixable pitch all night. <span class="g">It was the exact one the card circled.</span></h2>
+ <p><b>Colson Montgomery, 1st inning: sinker up at 2.79 — 100 EV double.</b> The scout's line was "every pitch down is a strikeout, every pitch up is a rocket." That's the rocket. Same receipt as Young's 106-EV double in Seattle: <b>the sinker to a fast, flat-or-leveraged swing can never ride up.</b> This rule now travels to Julio Rodríguez on Friday.</p>
+ <p>And the correction owed from the night-of read: <b>the Benintendi homer was NOT a hang.</b> Savant has it at the shins (1.43) with a .146 xBA — he golfed a good pitch. Off-card selection (his plan said cambio), on-card location. That's NOISE, not process.</p>
+</div>
+
+<div class="kicker">Every Plate Appearance</div>
+<table class="tbl pat"><thead><tr><th>Inn</th><th>Batter</th><th>Result</th><th>P</th><th>RV</th><th>Contact</th><th>Verdict</th></tr></thead>
+<tbody><tr><td>1</td><td><b style='color:#fff'>Antonacci</b></td><td>Reached (E)</td><td>7</td><td class='rv'>+0.49</td><td>97 EV · xBA 0.264</td><td><span class='vp NOISE'>NOISE</span><div class=nt>Error behind him — but 97 EV off a cambio. The alarm bat, barreling soft stuff.</div></td></tr><tr><td>1</td><td><b style='color:#fff'>Murakami</b></td><td>K</td><td>5</td><td class='rv'>-0.25</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>1</td><td><b style='color:#fff'>Vargas</b></td><td>Out</td><td>2</td><td class='rv'>-0.26</td><td>86 EV · xBA 0.006</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>1</td><td><b style='color:#fff'>C.Montgomery</b></td><td>Double</td><td>3</td><td class='rv'>+0.82</td><td>100 EV · xBA 0.294</td><td><span class='vp FIXABLE'>FIXABLE</span><div class=nt>THE process miss: sinker UP (2.79) to the 63%-fast bat — 100 EV. The card’s exact warning.</div></td></tr><tr><td>1</td><td><b style='color:#fff'>Benintendi</b></td><td>Reached (E)</td><td>4</td><td class='rv'>+0.61</td><td>—</td><td><span class='vp NOISE'>NOISE</span><div class=nt>Curve in the dirt, chopper, defense booted it.</div></td></tr><tr><td>1</td><td><b style='color:#fff'>Peters</b></td><td>K</td><td>7</td><td class='rv'>-0.28</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>2</td><td><b style='color:#fff'>Meidroth</b></td><td>Single</td><td>3</td><td class='rv'>+0.45</td><td>83 EV · xBA 0.218</td><td><span class='vp SOFT'>SOFT</span><div class=nt>83 EV, .218 xBA flare off the sweeper. Pest did pest things.</div></td></tr><tr><td>2</td><td><b style='color:#fff'>Pereira</b></td><td>Out (FO)</td><td>2</td><td class='rv'>-0.35</td><td>76 EV · xBA 0.293</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>2</td><td><b style='color:#fff'>Romo</b></td><td>K</td><td>4</td><td class='rv'>-0.26</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>2</td><td><b style='color:#fff'>Antonacci</b></td><td>Out</td><td>4</td><td class='rv'>-0.27</td><td>99 EV · xBA 0.305</td><td><span class='vp NOISE'>NOISE</span><div class=nt>99 EV groundout — second straight loud contact off soft stuff.</div></td></tr><tr><td>3</td><td><b style='color:#fff'>Murakami</b></td><td>K</td><td>6</td><td class='rv'>-0.26</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>3</td><td><b style='color:#fff'>Vargas</b></td><td>K</td><td>6</td><td class='rv'>-0.26</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>3</td><td><b style='color:#fff'>C.Montgomery</b></td><td>K</td><td>3</td><td class='rv'>-0.26</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>4</td><td><b style='color:#fff'>Benintendi</b></td><td>HOME RUN</td><td>1</td><td class='rv'>+1.11</td><td>97 EV · xBA 0.146</td><td><span class='vp NOISE'>NOISE</span><div class=nt>Correction from the night-of read: NOT hung — sweeper at the shins (1.43), .146 xBA. Off-card selection (his plan was cambio), on-card location. Golfed. Tip the cap.</div></td></tr><tr><td>4</td><td><b style='color:#fff'>Peters</b></td><td>Single</td><td>4</td><td class='rv'>+0.45</td><td>94 EV · xBA 0.969</td><td><span class='vp NOISE'>NOISE</span><div class=nt>On-plan cambio, down (1.60) — squared anyway, .969 xBA. Executed and beaten.</div></td></tr><tr><td>4</td><td><b style='color:#fff'>Meidroth</b></td><td>Out</td><td>1</td><td class='rv'>-0.03</td><td>29 EV · xBA 0.115</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>4</td><td><b style='color:#fff'>Pereira</b></td><td>K</td><td>4</td><td class='rv'>-0.26</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>4</td><td><b style='color:#fff'>Romo</b></td><td>K</td><td>4</td><td class='rv'>-0.28</td><td>—</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>5</td><td><b style='color:#fff'>Antonacci</b></td><td>Out</td><td>3</td><td class='rv'>-0.26</td><td>95 EV · xBA 0.060</td><td><span class='vp CLEAN'>CLEAN</span><div class=nt>95 EV but 39° — can of corn (.060 xBA). Ladder four-seam.</div></td></tr><tr><td>5</td><td><b style='color:#fff'>Murakami</b></td><td>Out</td><td>5</td><td class='rv'>-0.26</td><td>85 EV · xBA 0.098</td><td><span class='vp CLEAN'>CLEAN</span></td></tr><tr><td>5</td><td><b style='color:#fff'>Vargas</b></td><td>Out</td><td>4</td><td class='rv'>-0.26</td><td>90 EV · xBA 0.011</td><td><span class='vp CLEAN'>CLEAN</span></td></tr></tbody></table>
+
+<div class="kicker">Plan Adherence · graded against the pre-game scout</div>
+<div class="adgrid">
+ <div class="adc part"><span class="st">PARTIAL</span><h5>Boom bats below the knees, never behind</h5><p>59% of pitches to Murakami/Colson below 2.6 ft, but <b>5 looks middle-third-and-up</b> and he fell behind in 2 of 5 PAs. Murakami: contained (2 K + a groundout). Colson: the double, on the up-sinker. The containment held on one, broke once on the other.</p></div>
+ <div class="adc fail"><span class="st">FAIL — AND IT WON</span><h5>Cambio leads 2-strike lefties · sinker retired</h5><p><b>Five 2K sinkers to lefties</b> against a 1-for-12 rule — and <b>3 of the 8 strikeouts finished on the sinker; zero finished on the cambio.</b> The plan inverted and the night was won anyway. Verdict: the sinker works there as an <b>ambush, not a diet</b> — one look per hitter, earned by the cambio's shadow.</p></div>
+ <div class="adc pass"><span class="st">PASS</span><h5>Zone the pests</h5><p>Meidroth: 3 pitches, then 1 pitch. Romo: two 4-pitch strikeouts. Pereira hunted and punched (43% whiff bat). Zero wasted bullets on the bottom.</p></div>
+ <div class="adc fail"><span class="st">FAIL — ALARM RE-ARMED</span><h5>Antonacci gets the velocity plan</h5><p>The card said Naylor treatment: velocity, contact outs. He got <b>57% soft stuff</b> and barreled it — <b>97, 99, 95 EV</b> in three trips. The only Sox bat that covers everything covered everything. Friday's version of this bat is Brendan Donovan.</p></div>
+ <div class="adc pass"><span class="st">PASS</span><h5>Four-seam is a look — used as the ladder</h5><p>22 four-seams (his heaviest FF night as a starter) and it <b>finished two strikeouts ABOVE the zone</b> — Peters at 3.43, Murakami at 3.21. That's the fix the Pitcher List piece asked for: not "up-ish," actually above.</p></div>
+ <div class="adc pass"><span class="st">PASS — ELITE</span><h5>Two-strike generation &amp; free passes</h5><p><b>16 of 21 PAs reached two strikes (76%)</b> — the K-rate lever the Foley article said was missing. First-pitch strike 62%. <b>Zero walks.</b> The engine of the 8-K night wasn't stuff; it was count control.</p></div>
+</div>
+
+<div class="kicker">What Feeds Forward</div>
+<div class="glayer">
+ <h4>⚙ Carryover items → Friday at Seattle</h4>
+ <div class="v"><span class="ok">✓</span> <b style="color:#fff">Sinker ambush is real</b> — 3 Ks on the retired pitch corroborates the Foley thesis (his weakest-stuff pitch suppresses contact). Rule update, not repeal: one surprise sinker per lefty, cambio still leads.</div>
+ <div class="v"><span class="no">✗</span> <b style="color:#fff">Cambio finished zero</b> — first start since the Fenway game with no CH strikeout. Watch, don't panic: it still set every table.</div>
+ <div class="v"><span class="no">✗</span> <b style="color:#fff">Sinker-up to fast/flat swings</b> — Colson 100 EV joins Young's 106 EV from round one in Seattle. The rule now covers Julio (59% fast).</div>
+ <div class="v"><span class="ok">✓</span> <b style="color:#fff">Contact-manager alarm</b> — Antonacci barreled soft stuff three times. Donovan (13% whiff, .342 damage) is that bat on Friday. Velocity plan, no exceptions this time.</div>
+</div>
+
+<div class="speak">
+ <span class="tag">SPEAK GRIFFIN · 30 SEC</span>
+ <p>Cleanest process start of the year: <b>one fixable pitch in 21 hitters.</b> The line says 1 ER; the ledger says the two errors carried more run value than anything you threw. <span class="gold">Sixteen of twenty-one to two strikes and zero walks</span> — that's the whole engine of the eight punchouts.</p>
+ <p>Two honest notes. The Colson double was the sinker riding up to a max-effort swing — same pitch that got hit 106 in Seattle last month. <b>That sinker never goes up to the fast swings, and Friday that means Julio.</b> And your sneaky win: the sinker you weren't supposed to throw at two strikes punched out three lefties. <span class="gold">It works as an ambush because the cambio makes them forget it.</span> One per customer — don't turn the trick into a habit.</p>
+</div>
+</div></body></html>
